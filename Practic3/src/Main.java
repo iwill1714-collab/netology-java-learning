@@ -1,18 +1,13 @@
-import java.util.Scanner;
-
-import ru.netology.service.CustomsService;
-
 
 public class Main {
+    public static String truncate(String text, int length) {
+        return text.substring(0, length) + "...";
+    }
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        var text = "it works!";
+        System.out.println(truncate(text, 2));
 
-        System.out.print("Введ товара (в руб.): ");
-        int price = scanner.nextInt();
+    }
 
-        System.out.print("Введите вес товара (в кг.): ");
-        int weight = scanner.nextInt();
-
-        System.out.print("Размер пошлины (в руб.) составит: " + CustomsService.calculateCustoms(price, weight));
-            }
 }
