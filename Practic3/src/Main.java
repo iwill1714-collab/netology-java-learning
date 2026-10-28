@@ -1,15 +1,18 @@
-//TIP Чтобы <b>запустить</b> код, нажмите <shortcut actionId="Run"/> или
-// нажмите на значок <icon src="AllIcons.Actions.Execute"/> на полях.
+import java.util.Scanner;
+
+import ru.netology.service.CustomsService;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Нажмите <shortcut actionId="ShowIntentionActions"/>, когда курсор находится на подсвеченном тексте,
-        // чтобы увидеть предложения IntelliJ IDEA по исправлению.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Нажмите <shortcut actionId="Debug"/>, чтобы начать отладку кода. Мы установили одну <icon src="AllIcons.Debugger.Db_set_breakpoint"/> точку останова
-            // для вас, но вы всегда можете добавить больше, нажав <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-    }
+        System.out.print("Введите цену товара (в руб.): ");
+        int price = scanner.nextInt();
+
+        System.out.print("Введите вес товара (в кг.): ");
+        int weight = scanner.nextInt();
+
+        System.out.print("Размер пошлины (в руб.) составит: " + CustomsService.calculateCustoms(price, weight));
+            }
 }
